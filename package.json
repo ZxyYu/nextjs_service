@@ -1,0 +1,26 @@
+{
+  "name": "next_serives",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "koa": "^2.15.3",
+    "koa-router": "^13.0.1",
+    "koa-static": "^5.0.0",
+    "path-parse": "^1.0.7",
+    "stream": "^0.0.3"
+  },
+  "devDependencies": {
+    "mockjs": "^1.1.0",
+    "nodemon": "^3.1.9"
+  }
+}
