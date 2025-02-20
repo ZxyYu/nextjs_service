@@ -6,13 +6,15 @@ const Random = Mock.Random;
 
 const mockList = [
     {
-        url: '/api/data',
-        method: 'get',
-        response() {
+        url: '/api/user/sendVerifyCode',
+        method: 'post',
+        response(req) {
+            console.log("body", req.request.body);
             return {
                 errno: 0,
                 data: {
-                    id: Random.id(),
+                    code: 200,
+                    data: 6899,
                 }
             }
         }
