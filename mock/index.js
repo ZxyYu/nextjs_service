@@ -1,5 +1,5 @@
 const Mock = require('mockjs');
-
+const sendVerificationCode = require('./verify');
 const Random = Mock.Random;
 
 
@@ -10,12 +10,21 @@ const mockList = [
         method: 'post',
         response(req) {
             console.log("body", req.request.body);
+            const { to, templateId } = req.request.body;
+            if (to) {
+                sendVerificationCode({ to, templateId, datas: [Random.integer(1000,9999), '5']})
+                return {
+                    errno: 0,
+                    data: {
+                        code: 200,
+                    },
+                };
+            };
             return {
-                errno: 0,
+                errno: 1,
                 data: {
-                    code: 200,
-                    data: 6899,
-                }
+                    code: 400,
+                },
             }
         }
     },
